@@ -48,9 +48,10 @@ Code location: `src/baselines.py`. Math is fixed; these inputs are open:
       is the interface. *(Transfermarkt has no API and scraping has ToS implications
       for a public repo — confirm approach: browser-capture into a frozen table,
       like FIFA, is the clean option.)*
-- [ ] **Pinnacle closing line** (§13): no open API; pick an odds aggregator
-      (e.g. the-odds-api.com) + key. Sole three-way (1X2) benchmark if Polymarket
-      doesn't price the draw per match.
+- [~] **Pinnacle closing line** (§13): adapter DONE (`src/markets/pinnacle.py`,
+      the-odds-api v4 h2h -> de-vig -> A/B-aligned 1X2 snapshot). **NEEDS:** your
+      `ODDS_API_KEY` (the-odds-api.com, Pinnacle coverage) in `.env`. Then I poll
+      near each kickoff for the closing line.
 - [ ] **2026 bracket/schedule** feed (teams, dates, venues, rest days). For the
       pilot only finished group-stage matches are needed.
 
