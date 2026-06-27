@@ -63,6 +63,12 @@ ARMS: Tuple[str, ...] = ("primary", "conditioning")  # market withheld / supplie
 # =============================================================================
 EQUIVALENCE_MARGIN = 0.01           # TOST margin in RPS/Brier diff (§14, most consequential)
 BOOTSTRAP_RESAMPLES = 10_000        # bootstrap CIs for scores & skill
+ALPHA = 0.05                        # significance level; primary tests uncorrected (§14)
+CI_LEVEL = 0.95                     # 95% confidence/bootstrap intervals
+# Fixes the FROZEN scoring script's bootstrap resampling so CIs are reproducible
+# and cannot be re-rolled after results arrive (§17 credibility). Not a modelling
+# choice — purely reproducibility.
+BOOTSTRAP_SEED = 20260627
 ECE_BINS = 10                       # equal-width bins for ECE/MCE
 PRED_BOUNDS: Tuple[float, float] = (0.01, 0.99)   # clip preds so log score stays finite
 DM_SMALL_SAMPLE_CORRECTION = "harvey-leybourne-newbold"   # mandatory at this n

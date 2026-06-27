@@ -22,6 +22,8 @@ def test_locked_constants():
 def test_statistical_constants():
     assert C.EQUIVALENCE_MARGIN == 0.01          # single most consequential choice
     assert C.BOOTSTRAP_RESAMPLES == 10_000
+    assert C.ALPHA == 0.05
+    assert C.CI_LEVEL == 0.95
     assert C.ECE_BINS == 10
     assert C.PRED_BOUNDS == (0.01, 0.99)
     assert C.DM_SMALL_SAMPLE_CORRECTION == "harvey-leybourne-newbold"

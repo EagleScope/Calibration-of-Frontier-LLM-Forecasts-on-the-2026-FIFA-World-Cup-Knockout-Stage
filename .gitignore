@@ -29,3 +29,6 @@ env/
 *.swp
 .idea/
 .vscode/
+
+# Demo/scoring artifacts
+data/*.png
