@@ -35,10 +35,12 @@ Code location: `src/baselines.py`. Math is fixed; these inputs are open:
 - [ ] **Expected-goals mapping** from the pack: `base_goals=1.35`, `elo_per_goal=250`.
 
 ## E. Data sources (§11, §13) — needed for the live pack + 3-way benchmark
-- [ ] **Match-data adapters**: Elo (eloratings.net), FIFA rank, Transfermarkt squad
-      value, recent form/goals (a results DB — which one? some need a key).
-      `data_freeze.FieldSource` is the interface; freeze core is done. *(Transfermarkt
-      has no API and scraping has ToS implications for a public repo — confirm approach.)*
+- [x] **Elo (eloratings.net)** — DONE: `src/sources/elo_eloratings.py` (live TSV,
+      name->rating, eloA/eloB/elo_diff). Verified live.
+- [ ] **Remaining match-data adapters**: FIFA rank, Transfermarkt squad value,
+      recent form/goals (a results DB — which one? some need a key).
+      `data_freeze.FieldSource` is the interface. *(Transfermarkt has no API and
+      scraping has ToS implications for a public repo — confirm approach.)*
 - [ ] **Pinnacle closing line** (§13): no open API; pick an odds aggregator
       (e.g. the-odds-api.com) + key. Sole three-way (1X2) benchmark if Polymarket
       doesn't price the draw per match.
