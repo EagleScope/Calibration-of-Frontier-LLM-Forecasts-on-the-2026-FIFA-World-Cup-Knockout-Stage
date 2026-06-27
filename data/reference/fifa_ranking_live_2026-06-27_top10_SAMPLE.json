@@ -1,0 +1,19 @@
+{
+  "source": "FIFA/Coca-Cola Men's World Ranking",
+  "official_date": "2026-06-11",
+  "captured_at": "2026-06-27T12:45:00-04:00",
+  "official": false,
+  "note": "LIVE/unofficial top-10 captured via browser on 2026-06-27 as a SAMPLE for the adapter. NOT the frozen study input. The frozen pack must use the OFFICIAL full table (publish date 2026-06-11) — see PRE_LOCK_CHECKLIST.md. Live points shift mid-tournament; official values differ.",
+  "ranking": {
+    "France": {"rank": 1, "points": 1906.84},
+    "Argentina": {"rank": 2, "points": 1901.93},
+    "Spain": {"rank": 3, "points": 1879.58},
+    "England": {"rank": 4, "points": 1829.82},
+    "Brazil": {"rank": 5, "points": 1785.19},
+    "Morocco": {"rank": 6, "points": 1776.40},
+    "Netherlands": {"rank": 7, "points": 1775.50},
+    "Portugal": {"rank": 8, "points": 1766.74},
+    "Mexico": {"rank": 9, "points": 1736.01},
+    "Belgium": {"rank": 10, "points": 1735.41}
+  }
+}
