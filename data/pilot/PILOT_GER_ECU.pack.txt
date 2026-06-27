@@ -1,0 +1,13 @@
+MATCH: Group E, 2026-06-25, MetLife Stadium, East Rutherford
+TEAM A: Germany
+TEAM B: Ecuador
+
+                              TEAM A        TEAM B
+World Football Elo:           1916        1902
+Elo difference (A - B):       14
+FIFA ranking:                 10       23
+Squad market value (EUR m):   947.0         368.7
+Recent form (last 10, W-D-L): 10-0-0       3-6-1
+Goals for / against (last 10):34/7       11/6
+Host nation playing at home:  no       no
+Rest days since last match:   5       5
