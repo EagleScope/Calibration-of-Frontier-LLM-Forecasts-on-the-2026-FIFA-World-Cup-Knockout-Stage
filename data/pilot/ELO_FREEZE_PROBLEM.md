@@ -73,3 +73,41 @@ For the live study, **capture eloratings `World.tsv` at kickoff−3h, archive th
 bytes + hash, and freeze** — that is leakage-free and reproducible. Point-in-time
 historical national-team Elo isn't available off the shelf; scoring a *finished*
 match cleanly would require self-recomputing Elo to a pre-match cutoff (option B).
+
+---
+
+## IMPLEMENTED (2026-06-27)
+The live capture-and-freeze above is built: `src/sources/elo_freeze.py`
+(`capture_elo_snapshot` archives raw `World.tsv` + `en.teams.tsv` with a UTC
+timestamp + per-file SHA-256; `freeze_elo_for_match` re-derives the two teams'
+ratings from the archive and attaches provenance). Verified live: captured a real
+snapshot, then re-derived Germany = 1916 **from the archived bytes offline**, with
+the capture timestamp and hashes recorded. 4 offline tests in
+`tests/test_elo_freeze.py`. This solves the **prospective** (R32+) case.
+
+## SCOPE DECISION FOR THE PI — the 72 finished group-stage matches (§3/§14 secondary)
+These are already over, so there is **no pre-match Elo snapshot** for them and none
+can be captured now (the leakage we hit in the pilot). This must be settled before
+the pre-registration is tagged. Three options — **I am not deciding; the PI decides:**
+
+- **(a) Find/synthesize a historical-Elo source for the group stage.** The only
+  viable form is **self-recomputing** World-Football-Elo to a `date < kickoff` cutoff
+  for each of the 72 matches, from an independent results DB (eloratings' formula is
+  published).
+  *One-line rec:* most rigorous and keeps Elo (the single strongest predictor, §11)
+  in the secondary set — but it's a real build (Elo reimplementation + results-DB
+  dependency + validation) that won't match eloratings to the integer.
+
+- **(b) Run the group-stage secondary WITHOUT Elo** (FIFA rank + squad value + form/
+  goals/rest only; drop Elo and the Elo/Dixon-Coles baselines there).
+  *One-line rec:* cheap and fully leakage-clean, but the group-stage pack then differs
+  from the knockout pack, so the two sets are **not apples-to-apples**, and the
+  secondary loses its strongest feature.
+
+- **(c) Drop the group-stage secondary analysis entirely** (§3/§14 exploratory).
+  *One-line rec:* simplest and removes the leakage question completely, but forfeits
+  the ~72-match power booster the protocol leans on for its hard power ceiling (§15).
+
+> The knockout (primary) study is unaffected by this decision — it always freezes
+> Elo pre-kickoff via the implemented module. This is purely about the secondary
+> group-stage dataset.

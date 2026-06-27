@@ -35,3 +35,6 @@ data/*.png
 
 # throwaway scripts (not part of the study)
 scripts/
+
+# Throwaway Elo demo snapshot (real per-match snapshots are committed)
+data/packs/elo_snapshots/demo/
