@@ -121,6 +121,8 @@ Fields per match:
 
 The two market baselines are **excluded** from the primary pack (circularity); the de-vigged market price enters **only** in the conditioning arm.
 
+**Knockout vs group-stage pack (registered, pre-lock).** All fields above — **including World Football Elo** — are used for the prospective knockout matches, where every field (Elo included) is captured and **frozen before kickoff** so it cannot leak. The **secondary group-stage analysis (§14) uses a reduced version of this pack WITHOUT Elo**: those matches are already complete, and no leakage-free point-in-time Elo can be obtained (eloratings.net serves only current ratings), so Elo and the Elo difference are omitted there and the group-stage results are reported as exploratory and **not directly comparable** to the knockout pack. See §14 (Group stage) and the data-pipeline note for the freeze procedure.
+
 ### Data sources and freeze protocol
 - Elo and Elo difference — eloratings.net
 - FIFA ranking — FIFA
@@ -180,7 +182,7 @@ Assessed on the **binary advance / not-advance** forecast for each knockout matc
 - **Information conditioning:** difference in Brier and RPS, and change in divergence from the market, between the withheld and supplied arms.
 - **Added information:** forecast-encompassing test of whether market-plus-model beats market alone; correlation between each model's probabilities and the Elo baseline.
 - **Ensemble:** the same scores for the equal-weight ensemble.
-- **Group stage (secondary, exploratory):** the ~72 completed group-stage matches as an additional dataset for power, clearly labeled secondary and exploratory (those matches are already over, so this is a weaker, non-prospective analysis).
+- **Group stage (secondary, exploratory — REDUCED PACK, no Elo):** the ~72 completed group-stage matches as an additional dataset for power, clearly labeled secondary and exploratory (those matches are already over, so this is a weaker, non-prospective analysis). **Registered amendment (pre-lock):** because no leakage-free point-in-time Elo source exists for completed matches — eloratings.net publishes only *current* ratings, which already incorporate each match's result — the group-stage pack **omits World Football Elo and the Elo difference**, and the **Elo and Dixon–Coles baselines are not computed** on it. The group-stage secondary therefore uses a **reduced feature set: FIFA rank, squad market value, recent form (W–D–L), goals for/against, host flag, and rest days only.** It is consequently **not directly comparable** to the knockout pack (which includes Elo, captured and frozen pre-kickoff so it cannot leak) and is reported as **exploratory only**.
 - **Descriptive only:** hit rate; a simulated betting return against Polymarket, flagged as a noisy secondary metric.
 
 ### Inference (LOCKED)

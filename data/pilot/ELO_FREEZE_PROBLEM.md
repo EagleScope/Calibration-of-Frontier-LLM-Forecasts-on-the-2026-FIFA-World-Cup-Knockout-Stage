@@ -85,10 +85,12 @@ snapshot, then re-derived Germany = 1916 **from the archived bytes offline**, wi
 the capture timestamp and hashes recorded. 4 offline tests in
 `tests/test_elo_freeze.py`. This solves the **prospective** (R32+) case.
 
-## SCOPE DECISION FOR THE PI — the 72 finished group-stage matches (§3/§14 secondary)
-These are already over, so there is **no pre-match Elo snapshot** for them and none
-can be captured now (the leakage we hit in the pilot). This must be settled before
-the pre-registration is tagged. Three options — **I am not deciding; the PI decides:**
+## SCOPE DECISION — the 72 finished group-stage matches (§3/§14 secondary)
+**DECIDED 2026-06-27 by the PI: option (b).** The group-stage secondary analysis runs
+on a **reduced pack WITHOUT Elo** (FIFA rank + squad value + form + goals + rest days
+only); the Elo and Dixon–Coles baselines are not computed on it; it is **not directly
+comparable** to the knockout pack and is **exploratory only**. Registered in
+`METHODS_PROTOCOL_v1.md` §11 and §14. The options as weighed:
 
 - **(a) Find/synthesize a historical-Elo source for the group stage.** The only
   viable form is **self-recomputing** World-Football-Elo to a `date < kickoff` cutoff
@@ -99,7 +101,7 @@ the pre-registration is tagged. Three options — **I am not deciding; the PI de
   dependency + validation) that won't match eloratings to the integer.
 
 - **(b) Run the group-stage secondary WITHOUT Elo** (FIFA rank + squad value + form/
-  goals/rest only; drop Elo and the Elo/Dixon-Coles baselines there).
+  goals/rest only; drop Elo and the Elo/Dixon-Coles baselines there).  ← **CHOSEN**
   *One-line rec:* cheap and fully leakage-clean, but the group-stage pack then differs
   from the knockout pack, so the two sets are **not apples-to-apples**, and the
   secondary loses its strongest feature.
