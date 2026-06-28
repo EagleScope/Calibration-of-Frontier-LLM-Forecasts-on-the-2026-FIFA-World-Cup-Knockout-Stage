@@ -59,6 +59,8 @@ class AggregatedForecast:
     median: Dict[str, float]           # per-key median (primary point forecast)
     trimmed_mean: Dict[str, float]     # 10% trimmed mean (robustness)
     timestamp_window: Dict[str, str]   # {'start':..., 'end':...}
+    sd: Dict[str, float] = field(default_factory=dict)   # per-key sample SD across the N draws
+    iqr: Dict[str, float] = field(default_factory=dict)  # per-key IQR (Q75-Q25) — self-consistency
 
     def to_dict(self) -> Dict:
         return asdict(self)

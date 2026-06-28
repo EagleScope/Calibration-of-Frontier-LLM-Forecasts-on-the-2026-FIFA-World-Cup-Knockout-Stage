@@ -114,6 +114,18 @@ def test_trimmed_mean_drops_tails():
     assert tm["A_WIN"] == pytest.approx(md["A_WIN"], abs=0.02)
 
 
+def test_dispersion_captures_spread():
+    # Identical samples -> zero spread; varied samples -> positive SD/IQR.
+    same = [_mk(45, 30, 25, 55) for _ in range(10)]
+    sd0, iqr0 = A.dispersion(same)
+    assert sd0["A_WIN"] == pytest.approx(0.0) and iqr0["A_WIN"] == pytest.approx(0.0)
+    varied = [_mk(40, 30, 30, 50), _mk(60, 20, 20, 70), _mk(50, 25, 25, 60)]
+    sd1, iqr1 = A.dispersion(varied)
+    assert sd1["A_WIN"] > 0 and iqr1["A_WIN"] > 0
+    # keys cover the full five-key set
+    assert set(sd1) == set(C.FIVE_KEYS)
+
+
 def test_sensitivity_subsets():
     samples = [_mk(40 + i, 30, 30 - i, 50 + i) for i in range(20)]
     sens = A.sensitivity(samples, ns=(5, 10, 15, 20))

@@ -6,11 +6,11 @@
 credentials
 aws_credentials
 
-# ---- Collected data (frozen packs, forecasts, market snapshots) ----
-# Packs/forecasts are timestamped artifacts; keep them out of git unless
-# explicitly committed for the registered forecast timestamps.
-data/forecasts/*
-data/markets/*
+# ---- Collected data ----
+# LIVE registered forecasts ARE committed (§17 rolling timestamps): every per-call
+# record is saved AND publicly timestamped. Only pilot/throwaway logs stay ignored.
+data/forecasts/pilot*
+data/markets/pilot*
 !data/**/.gitkeep
 
 # ---- Python ----

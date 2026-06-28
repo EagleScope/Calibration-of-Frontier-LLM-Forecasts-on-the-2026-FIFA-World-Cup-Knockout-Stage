@@ -51,6 +51,9 @@ def test_run_match_grid_shape_and_aggregate():
         tw = RA.three_way_vector(cell.aggregate)
         assert tw.sum() == pytest.approx(1.0)
         assert 0.0 <= RA.advance_prob_A(cell.aggregate) <= 1.0
+        # aggregate also carries the per-key spread of the 20 samples
+        assert set(cell.aggregate.sd) == set(C.FIVE_KEYS)
+        assert all(v >= 0 for v in cell.aggregate.iqr.values())
 
 
 def test_conditioning_skipped_without_market():

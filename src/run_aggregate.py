@@ -64,12 +64,13 @@ def aggregate_cell(records: List[ForecastRecord], model_name: str,
         return None
     median = AGG.aggregate(samples, method="median")
     trimmed = AGG.aggregate(samples, method="trimmed_mean")
+    sd, iqr = AGG.dispersion(samples)
     times = [r.timestamp for r in records if r.timestamp]
     window = {"start": min(times), "end": max(times)} if times else {"start": "", "end": ""}
     return AggregatedForecast(
         model_name=model_name, reasoning_level=reasoning_level, arm=arm,
         match_id=match_id, n=len(samples), median=median, trimmed_mean=trimmed,
-        timestamp_window=window)
+        timestamp_window=window, sd=sd, iqr=iqr)
 
 
 def run_match(clients: Dict[str, ModelClient], match_id: str, pack_fields: Dict,

@@ -65,6 +65,25 @@ def aggregate(samples: Sequence[Dict[str, float]], method: str = C.PRIMARY_AGGRE
     return _renorm(agg)
 
 
+def dispersion(samples: Sequence[Dict[str, float]],
+               keys: Sequence[str] = C.FIVE_KEYS) -> tuple:
+    """Per-key spread of the N samples — the model's self-consistency / precision.
+
+    Returns (sd, iqr) dicts in probability units (sample SD, ddof=1; IQR = Q75-Q25).
+    Computed from the SAME renormalized samples as the median/trimmed-mean, so no
+    extra calls — it just preserves the spread the aggregate would otherwise hide."""
+    if not samples:
+        raise ValueError("no samples")
+    sd: Dict[str, float] = {}
+    iqr: Dict[str, float] = {}
+    for k in keys:
+        col = np.array([s[k] for s in samples], dtype=float)
+        sd[k] = float(np.std(col, ddof=1)) if len(col) > 1 else 0.0
+        q1, q3 = np.percentile(col, [25, 75])
+        iqr[k] = float(q3 - q1)
+    return sd, iqr
+
+
 def sensitivity(samples: Sequence[Dict[str, float]],
                 ns: Sequence[int] = C.SENSITIVITY_N,
                 method: str = C.PRIMARY_AGGREGATOR) -> Dict[int, Dict[str, float]]:
