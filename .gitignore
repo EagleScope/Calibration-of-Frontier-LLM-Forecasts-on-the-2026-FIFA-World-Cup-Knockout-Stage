@@ -6,11 +6,17 @@
 credentials
 aws_credentials
 
-# ---- Collected data ----
-# LIVE registered forecasts ARE committed (§17 rolling timestamps): every per-call
-# record is saved AND publicly timestamped. Only pilot/throwaway logs stay ignored.
+# ---- Collected data (pre-registration TAG policy) ----
+# TAG = protocol + scoring + frozen packs + ZERO model forecasts. The tag is created
+# BEFORE any forecast run, so the tagged tree is forecast-free by construction.
+# Live model forecasts: committed in per-round commits AFTER the tag (§17 timestamps);
+#   tracked here (only pilot/throwaway logs ignored).
 data/forecasts/pilot*
-data/markets/pilot*
+# Market-benchmark captures: GITIGNORED collected data, NOT in the tagged commit
+#   (PI directive, item 5) — raw payload + UTC timestamp + SHA-256 stored on disk.
+data/markets/*
+# Pilot evidence kept OUT of the tagged tree (also retained in git history).
+data/pilot/_local/
 !data/**/.gitkeep
 
 # ---- Python ----

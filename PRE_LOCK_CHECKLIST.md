@@ -57,8 +57,23 @@ Code location: `src/baselines.py`. Math is fixed; these inputs are open:
       the gate (>95% clean five-key parse; Brier stable within 0.005 between N=10/20)
       and I will **show measured per-match cost** before anything larger runs.
 
+## Collection staging (registered operational decision — 2026-06-28)
+- **Conditioning (market-supplied) arm is staged, NOT dropped.** For match 73 and
+  early R32, only the **primary (market-withheld) arm** is run, because the live
+  per-match market capture (Pinnacle + Polymarket) has not yet been exercised on real
+  data — we will not run untested market code in the prompt path on a live match.
+  Both arms remain in the registered design (§7); the conditioning arm comes online
+  early in R32 once the live market capture is built and tested. This sequencing is
+  recorded here so the early-R32 absence of conditioning data is transparent and dated,
+  not a silent omission.
+- **Market is still captured as a benchmark from match 73 onward** (raw Pinnacle/
+  Polymarket pre-kickoff prices, stored as gitignored collected data) — capturing the
+  price is separate from conditioning the models on it.
+
 ## Resolved at build time (no longer open)
 - [x] All four model IDs verified live: `claude-opus-4-8`, `gpt-5.5-2026-04-23`,
       `grok-4.3`, `gemini-3.1-pro-preview`.
 - [x] Polymarket champion/outright structure verified live (`world-cup-winner`
       event; per-team binary Yes/No). Per-match knockout markets post per round (§17).
+- [x] N reduced 20 -> 10 (PI cost decision); protocol + config read N=10; pilot
+      stability evidence retained out-of-tag (git history + data/pilot/_local/).

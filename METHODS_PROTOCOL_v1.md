@@ -99,7 +99,7 @@ Extra time and penalties resolve into the advancement outcome; these definitions
 
 ## 10. Repetitions and aggregation (LOCKED)
 
-- **N = 10** samples per (model × reasoning condition × arm × match). *(Reduced from 20 to 10 before lock: the pre-registration pilot showed the aggregate Brier is stable between N = 10 and N = 20 — |diff| 0.0030, within the §19 gate of 0.005 — so N = 10 reproduces N = 20 at half the API cost. Evidence: `data/pilot/N_SAMPLING_JUSTIFICATION.md` + the preserved N=20 pilot records.)*
+- **N = 10** samples per (model × reasoning condition × arm × match). *(Reduced from 20 to 10 before lock to manage API cost; the pre-registration pilot confirmed the aggregate Brier reproduces the N = 20 value within the registered §19 stability gate (≤ 0.005). The supporting pilot records + stability table are retained outside this tagged tree, in repository history.)*
 - **Primary point forecast = median** of the 10 samples. **10% trimmed mean** as a pre-registered robustness check. **Per-key sample SD and IQR** across the 10 draws are stored as a within-model self-consistency measure.
 - **Sensitivity analysis:** re-derive the aggregate at N = 5, 10 to demonstrate stability (converts the sample-size choice into within-study evidence).
 - **Temperature ≈ 0.7** for models that accept it, so samples are genuinely diverse; for models that reject temperature, diversity comes from stochastic reasoning and this is documented per model.
@@ -238,7 +238,7 @@ Per match: (3 paired models × 2 reasoning × 2 arms × 10) + (Gemini × 1 × 2 
 
 Run on finished group-stage matches. **Proceed to lock only if:**
 - **> 95%** of responses return exactly the expected five keys as integers (no percent signs, no extra text), and
-- the aggregate Brier is **stable to within 0.005** between N = 10 and N = 20. *(This pilot check was run and passed — |diff| 0.0030 — which is what justified registering N = 10 as the locked sample size; see §10 and `data/pilot/N_SAMPLING_JUSTIFICATION.md`.)*
+- the aggregate Brier is **stable to within 0.005** between N = 10 and N = 20. *(This pilot check was run and passed within the gate, which justified registering N = 10 as the locked sample size (§10); supporting records are retained outside the tagged tree.)*
 
 ---
 
