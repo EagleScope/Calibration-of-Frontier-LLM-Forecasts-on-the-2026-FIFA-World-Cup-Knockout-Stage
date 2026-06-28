@@ -22,7 +22,7 @@ src/data_freeze.py    §11 — pull each field, write one timestamped frozen pac
                       per match. (build order #1)
 src/clients/          §18 — uniform forecast(pack, reasoning_level, arm) per
                       provider. (next session)
-src/run_aggregate.py  §18.3 — 20 samples, parse five keys, aggregate by median.
+src/run_aggregate.py  §18.3 — 10 samples, parse five keys, aggregate by median.
 src/scoring_frozen.py §14 — FROZEN scoring: calibration, RPS/Brier/log, skill
                       vs each market, DM+HLN, bootstrap CIs, TOST. Runs on
                       synthetic data. Committed & timestamped at lock.

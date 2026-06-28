@@ -1,10 +1,10 @@
 """
-aggregate.py — aggregate the N=20 samples per (model x reasoning x arm x match).
+aggregate.py — aggregate the N=10 samples per (model x reasoning x arm x match).
 
 LOCKED (§10):
   - Primary point forecast  = MEDIAN of the samples (per key).
   - Robustness check        = 10% trimmed mean.
-  - Sensitivity             = re-derive at N = 5, 10, 15, 20 (config.SENSITIVITY_N).
+  - Sensitivity             = re-derive at N = 5, 10 (config.SENSITIVITY_N).
 
 Samples are the renormalized probability dicts (parsing.renormalize_five). We
 aggregate each key across samples, then renormalize so the three-way and the

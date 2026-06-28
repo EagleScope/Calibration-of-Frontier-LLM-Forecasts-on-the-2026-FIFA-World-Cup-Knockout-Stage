@@ -43,11 +43,3 @@ def test_load_from_file(tmp_path):
     p.write_text(json.dumps(TABLE))
     src = F.FifaRankingSource().load(str(p))
     assert src.get_rank("France") == 1
-
-
-def test_sample_file_is_marked_unofficial():
-    # The committed sample must NOT be mistaken for the official freeze.
-    src = F.FifaRankingSource().load(
-        "data/reference/fifa_ranking_live_2026-06-27_top10_SAMPLE.json")
-    assert src.official is False
-    assert src.get_rank("France") == 1

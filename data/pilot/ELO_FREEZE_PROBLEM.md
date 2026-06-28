@@ -1,6 +1,9 @@
 # Elo freeze & leakage — design note (pipeline gap surfaced by the pilot)
 
-**Status: proposal, not implemented.** The pilot ran on a *finished* match, where
+**Status: IMPLEMENTED and DECIDED (2026-06-27).** The capture-and-freeze procedure
+specified below is built (`src/sources/elo_freeze.py`) and the group-stage scope is
+decided (option b) — see the "IMPLEMENTED" and "SCOPE DECISION" sections at the end.
+The note originated from the pilot, which ran on a *finished* match, where
 eloratings.net's current rating already reflects the result → Elo leakage. For the
 *prospective* live study this specific leakage does not occur, but it forces a
 precise capture-and-freeze procedure for Elo, specified below.
@@ -21,7 +24,7 @@ a pre-kickoff capture is genuinely pre-match → no leakage. Make it reproducibl
 archiving the **raw source bytes**, not just the parsed numbers:
 
 1. At the matched pre-kickoff capture time `T_cap` (see Q3), fetch and **store the
-   raw `World.tsv` + `en.teams.tsv` bytes** to `data/packs/<match_id>.elo_raw/`.
+   raw `World.tsv` + `en.teams.tsv` bytes** to `data/packs/<match_id>.elo/`.
 2. Parse the two teams' ratings, compute `elo_diff`, write them into the frozen pack.
 3. Record in the pack JSON: the parsed values, `T_cap` (UTC ISO-8601), the source
    URLs, and a **SHA-256 of the raw `World.tsv` bytes**.

@@ -205,7 +205,7 @@ The knockout stage is only 32 matches — a hard ceiling on power. The analysis 
 
 - **Stage 0 — Lock and register (before the first R32 kickoff).** Freeze the information-pack schema, the exact prompts, the elicitation format, the model list and snapshots, the metric battery, the equivalence margin, the de-vig method, and the analysis code. Post this registration and the Round-of-32 forecasts to a timestamped public repository and to OSF **before the first knockout kickoff.** *(Protocol lock and per-round forecast timestamps are separate events — see §17.)*
 - **Stage 1 — Pilot (immediately before lock).** On finished group-stage matches. Proceed only if pass criteria (§19) are met.
-- **Stage 2 — Live collection (knockout window).** 20 samples per model and condition before each match's market close; both market baselines captured at the matched timestamp; champion and survival probabilities refreshed each round.
+- **Stage 2 — Live collection (knockout window).** 10 samples per model and condition before each match's market close; both market baselines captured at the matched timestamp; champion and survival probabilities refreshed each round.
 - **Stage 3 — Analysis (after the final).** Run the frozen scoring exactly as pre-registered. Report calibration first, market skill second, then conditioning/anchoring/ensemble. Post the arXiv preprint ~2 weeks after the final and release the full repository.
 
 ---
