@@ -72,10 +72,12 @@ def _match_event(events: List[Dict], team_A: str, team_B: str) -> Optional[Dict]
 # ----------------------------- capture (network) -------------------------- #
 def capture_market_benchmark(out_dir: str, match_id: str, team_A: str, team_B: str,
                              odds_api_key: str, kickoff_timestamp: str,
-                             capture_timestamp: Optional[str] = None) -> Dict:
-    """Run at kickoff-3h. Captures Pinnacle (raw + de-vig if clean) and attempts a
-    Polymarket per-match line (best-effort). Writes manifest.json. Returns the
-    manifest. Never fabricates — honest absence is recorded."""
+                             capture_timestamp: Optional[str] = None,
+                             polymarket_next_round: Optional[str] = None) -> Dict:
+    """Run at kickoff-3h. Captures Pinnacle (raw + de-vig if clean) and the
+    Polymarket per-match 3-way + advancement (§13 + AMENDMENT_001). `polymarket_
+    next_round` (e.g. 'Round of 16') enables the advancement line. Writes
+    manifest.json. Never fabricates — honest absence is recorded."""
     ts = capture_timestamp or _utc_now_iso()
     os.makedirs(out_dir, exist_ok=True)
     manifest: Dict = {"match_id": match_id, "team_A": team_A, "team_B": team_B,
@@ -111,17 +113,18 @@ def capture_market_benchmark(out_dir: str, match_id: str, team_A: str, team_B: s
     except Exception as ex:
         manifest["pinnacle"] = {"captured": False, "reason": str(ex)[:200]}
 
-    # --- Polymarket: best-effort per-match; per-match parser not built -> raw only ---
+    # --- Polymarket: raw archive + per-match 3-way + advancement (§13 + AMENDMENT_001) ---
     try:
         url = f"{PM.GAMMA}/public-search?{urllib.parse.urlencode({'q': team_A + ' ' + team_B, 'limit_per_type': 20})}"
         raw = _fetch_raw_bytes(url)
         arch = archive_payload(out_dir, f"{match_id}.polymarket.search.raw.json", raw, ts)
-        manifest["polymarket"] = {"captured": True, "raw_search": arch,
-                                  "note": "raw search archived; per-match parser not built — "
-                                          "extract advancement/winner line later. No value fabricated."}
+        search = json.loads(raw.decode("utf-8"))
+        bench = PM.build_match_benchmark(search, team_A, team_B,
+                                         next_round=polymarket_next_round)
+        manifest["polymarket"] = {"captured": True, "raw_search": arch, "benchmark": bench}
     except Exception as ex:
         manifest["polymarket"] = {"captured": False,
-                                  "reason": "no Polymarket per-match line captured: " + str(ex)[:160]}
+                                  "reason": "no Polymarket capture: " + str(ex)[:160]}
 
     with open(os.path.join(out_dir, f"{match_id}.market.manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
