@@ -99,9 +99,9 @@ Extra time and penalties resolve into the advancement outcome; these definitions
 
 ## 10. Repetitions and aggregation (LOCKED)
 
-- **N = 20** samples per (model × reasoning condition × arm × match).
-- **Primary point forecast = median** of the 20 samples. **10% trimmed mean** as a pre-registered robustness check.
-- **Sensitivity analysis:** re-derive the aggregate at N = 5, 10, 15 to demonstrate stability (converts the sample-size choice into within-study evidence).
+- **N = 10** samples per (model × reasoning condition × arm × match). *(Reduced from 20 to 10 before lock: the pre-registration pilot showed the aggregate Brier is stable between N = 10 and N = 20 — |diff| 0.0030, within the §19 gate of 0.005 — so N = 10 reproduces N = 20 at half the API cost. Evidence: `data/pilot/N_SAMPLING_JUSTIFICATION.md` + the preserved N=20 pilot records.)*
+- **Primary point forecast = median** of the 10 samples. **10% trimmed mean** as a pre-registered robustness check. **Per-key sample SD and IQR** across the 10 draws are stored as a within-model self-consistency measure.
+- **Sensitivity analysis:** re-derive the aggregate at N = 5, 10 to demonstrate stability (converts the sample-size choice into within-study evidence).
 - **Temperature ≈ 0.7** for models that accept it, so samples are genuinely diverse; for models that reject temperature, diversity comes from stochastic reasoning and this is documented per model.
 
 ---
@@ -230,7 +230,7 @@ The knockout stage is only 32 matches — a hard ceiling on power. The analysis 
 Per-provider input, output, and **reasoning** token counts logged on every call (the high-reasoning half dominates cost). The pilot yields the true per-match figure.
 
 ### Scale estimate (four-model set)
-Per match: (3 paired models × 2 reasoning × 2 arms × 20) + (Gemini × 1 × 2 arms × 20) = **280 calls/match** → **≈ 8,960** across 32 matches. Champion + survival prompts add **≈ 1,000–1,500**. Total **≈ 10,000** small calls. Inputs and outputs are tiny; expected cost is low (order tens to low hundreds of dollars), driven almost entirely by high-reasoning tokens — confirm from the pilot.
+Per match: (3 paired models × 2 reasoning × 2 arms × 10) + (Gemini × 1 × 2 arms × 10) = **140 calls/match** → **≈ 4,480** across 32 matches. Champion + survival prompts add **≈ 500–750**. Total **≈ 5,000** small calls. Inputs and outputs are tiny; expected cost is low (≈$110 for the model forecasts, confirmed by the pilot at ≈$5.86/match before the N=20→10 reduction), driven almost entirely by high-reasoning tokens.
 
 ---
 
@@ -238,7 +238,7 @@ Per match: (3 paired models × 2 reasoning × 2 arms × 20) + (Gemini × 1 × 2 
 
 Run on finished group-stage matches. **Proceed to lock only if:**
 - **> 95%** of responses return exactly the expected five keys as integers (no percent signs, no extra text), and
-- the aggregate Brier is **stable to within 0.005** between N = 10 and N = 20.
+- the aggregate Brier is **stable to within 0.005** between N = 10 and N = 20. *(This pilot check was run and passed — |diff| 0.0030 — which is what justified registering N = 10 as the locked sample size; see §10 and `data/pilot/N_SAMPLING_JUSTIFICATION.md`.)*
 
 ---
 

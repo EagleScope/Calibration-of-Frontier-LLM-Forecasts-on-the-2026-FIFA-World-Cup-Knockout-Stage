@@ -11,10 +11,10 @@ from config import config as C
 
 # ---- §10 repetitions & aggregation ----
 def test_locked_constants():
-    assert C.N_SAMPLES == 20
+    assert C.N_SAMPLES == 10                     # reduced 20->10 pre-lock (pilot-justified)
     assert C.PRIMARY_AGGREGATOR == "median"
     assert C.TRIMMED_MEAN_PROPORTION == 0.10
-    assert C.SENSITIVITY_N == (5, 10, 15, 20)
+    assert C.SENSITIVITY_N == (5, 10)
     assert C.TEMPERATURE == 0.7
 
 

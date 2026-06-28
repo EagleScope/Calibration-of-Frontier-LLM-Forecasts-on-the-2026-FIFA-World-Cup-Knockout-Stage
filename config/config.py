@@ -31,11 +31,14 @@ LOCKED = False  # FROZEN flips to True only at the §17 protocol-lock commit.
 # =============================================================================
 # 1. Repetitions & aggregation  (§10) — FROZEN
 # =============================================================================
-N_SAMPLES = 20                      # samples per (model x reasoning x arm x match)
+N_SAMPLES = 10                      # samples per (model x reasoning x arm x match)
+                                    # Reduced 20->10 pre-lock: pilot showed Brier
+                                    # stable N=10 vs N=20 (|diff| 0.0030 <= 0.005 gate).
+                                    # See data/pilot/N_SAMPLING_JUSTIFICATION.md.
 PRIMARY_AGGREGATOR = "median"       # primary point forecast
 ROBUSTNESS_AGGREGATOR = "trimmed_mean"
 TRIMMED_MEAN_PROPORTION = 0.10      # 10% trimmed mean (each tail)
-SENSITIVITY_N = (5, 10, 15, 20)     # re-derive aggregate at these N for stability
+SENSITIVITY_N = (5, 10)             # re-derive aggregate at these N for stability
 TEMPERATURE = 0.7                   # for models that accept it; documented per model
 
 # =============================================================================
@@ -99,7 +102,7 @@ PILOT_BRIER_STABILITY = 0.005       # |Brier(N=10) - Brier(N=20)| must be <= thi
 # =============================================================================
 # 7. Scale estimate  (§18) — FROZEN (sanity check / cost projection)
 # =============================================================================
-CALLS_PER_MATCH = 280               # (3 paired x 2 reasoning x 2 arms x 20) + (Gemini x 1 x 2 arms x 20)
+CALLS_PER_MATCH = 140               # (3 paired x 2 reasoning x 2 arms x 10) + (Gemini x 1 x 2 arms x 10)
 N_KNOCKOUT_MATCHES = 32
 
 # =============================================================================

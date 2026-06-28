@@ -34,9 +34,10 @@ def _all_clients(resp_fn):
 
 # ----------------------------- run/aggregate ------------------------------ #
 def test_expected_calls_matches_protocol_scale():
-    # §18: 280 calls/match at N=20 for the four-model set.
-    assert RA.expected_calls_per_match(n=20) == 280
-    assert RA.expected_calls_per_match(n=20) == C.CALLS_PER_MATCH
+    # §18: 140 calls/match at the locked N=10 for the four-model set.
+    assert RA.expected_calls_per_match(n=10) == 140       # §18: 140 calls/match at N=10
+    assert RA.expected_calls_per_match(n=10) == C.CALLS_PER_MATCH
+    assert RA.expected_calls_per_match(n=20) == 280        # formula still scales linearly
 
 
 def test_run_match_grid_shape_and_aggregate():
