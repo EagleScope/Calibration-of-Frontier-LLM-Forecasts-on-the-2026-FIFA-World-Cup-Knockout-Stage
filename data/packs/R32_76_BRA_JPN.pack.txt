@@ -1,0 +1,13 @@
+MATCH: Round of 32, 2026-06-29, NRG Stadium, Houston
+TEAM A: Brazil
+TEAM B: Japan
+
+                              TEAM A        TEAM B
+World Football Elo:           2009        1910
+Elo difference (A - B):       99
+FIFA ranking:                 5       17
+Squad market value (EUR m):   928.2         270.85
+Recent form (last 10, W-D-L): 6-2-2       7-3-0
+Goals for / against (last 10):24/11       20/7
+Host nation playing at home:  no       no
+Rest days since last match:   5       4

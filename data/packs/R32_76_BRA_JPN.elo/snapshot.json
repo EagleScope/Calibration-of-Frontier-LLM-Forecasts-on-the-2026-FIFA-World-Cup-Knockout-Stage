@@ -1,0 +1,20 @@
+{
+  "capture_timestamp": "2026-06-29T15:37:17.348823+00:00",
+  "source": "eloratings.net",
+  "source_urls": {
+    "World.tsv": "https://www.eloratings.net/World.tsv",
+    "en.teams.tsv": "https://www.eloratings.net/en.teams.tsv"
+  },
+  "files": {
+    "World.tsv": {
+      "path": "data/packs/R32_76_BRA_JPN.elo/World.tsv",
+      "sha256": "7a96e7c97f57b5b662a4c26a34fd52e3b779559f49b93d1bde3d3a351fbaef8f",
+      "bytes": 30442
+    },
+    "en.teams.tsv": {
+      "path": "data/packs/R32_76_BRA_JPN.elo/en.teams.tsv",
+      "sha256": "ff4b8c9c7bcdad56e81a007726c1a655c6dabdf77bca151b1d619f24125dbc90",
+      "bytes": 7277
+    }
+  }
+}

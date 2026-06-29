@@ -1,0 +1,151 @@
+{
+  "match_id": "R32_76_BRA_JPN",
+  "team_A": "Brazil",
+  "team_B": "Japan",
+  "capture_timestamp": "2026-06-29T15:37:17.348823+00:00",
+  "kickoff_timestamp": "2026-06-29T17:00:00+00:00",
+  "devig_method": "proportional",
+  "pinnacle": {
+    "captured": true,
+    "path": "data/markets/R32_76_BRA_JPN.pinnacle.raw.json",
+    "sha256": "969b4d98c95cfa09db6b7d76842d711bebd8be0a4ede2953dc45aaa55bd15022",
+    "bytes": 6804,
+    "captured_at": "2026-06-29T15:37:17.348823+00:00",
+    "raw_odds": {
+      "home": 1.77,
+      "draw": 3.72,
+      "away": 5.28
+    },
+    "devigged_AB": {
+      "A_WIN": 0.5521708329116487,
+      "DRAW": 0.2627264446918328,
+      "B_WIN": 0.1851027223965186
+    }
+  },
+  "polymarket": {
+    "captured": true,
+    "raw_search": {
+      "path": "data/markets/R32_76_BRA_JPN.polymarket.search.raw.json",
+      "sha256": "297eba6f754dc3f78853dcd128d3a63b26b624d3721e7aa1e23466d2ae177666",
+      "bytes": 2649100,
+      "captured_at": "2026-06-29T15:37:17.348823+00:00"
+    },
+    "benchmark": {
+      "team_A": "Brazil",
+      "team_B": "Japan",
+      "three_way": {
+        "captured": true,
+        "event_slug": "fifwc-bra-jpn-2026-06-29",
+        "raw_yes": {
+          "A_win": 0.555,
+          "draw": 0.265,
+          "B_win": 0.185
+        },
+        "booksum": 1.005,
+        "overround_pct": 0.5,
+        "primary_method": "proportional",
+        "devigged": {
+          "proportional": {
+            "A_WIN": 0.5522388059701493,
+            "DRAW": 0.26368159203980096,
+            "B_WIN": 0.18407960199004972
+          },
+          "odds_ratio": {
+            "A_WIN": 0.5529125770550163,
+            "DRAW": 0.26335779455133945,
+            "B_WIN": 0.1837296283936442
+          },
+          "shin": {
+            "A_WIN": 0.5530589307093077,
+            "DRAW": 0.2634202670060621,
+            "B_WIN": 0.18352080228463036
+          }
+        },
+        "per_market": [
+          {
+            "question": "Will Brazil win on 2026-06-29?",
+            "outcomes": "[\"Yes\", \"No\"]",
+            "outcomePrices": "[\"0.555\", \"0.445\"]",
+            "lastTradePrice": 0.56,
+            "bestBid": 0.55,
+            "bestAsk": 0.56,
+            "clobTokenIds": "[\"57092323451811073429818608596571079688057106582430141952397837549265655050698\", \"9822096886162353463283370713306283175246929342391362637574593482058866295778\"]",
+            "volume": "6008436.96717705",
+            "liquidity": "3614461.9526"
+          },
+          {
+            "question": "Will Brazil vs. Japan end in a draw?",
+            "outcomes": "[\"Yes\", \"No\"]",
+            "outcomePrices": "[\"0.265\", \"0.735\"]",
+            "lastTradePrice": 0.27,
+            "bestBid": 0.26,
+            "bestAsk": 0.27,
+            "clobTokenIds": "[\"102894855985692555532904127073544596800300556071376197346976065799709524987460\", \"109865753809105705979251380039043178608653542551041586721550943466833485563078\"]",
+            "volume": "1088620.1518760223",
+            "liquidity": "3798173.1456"
+          },
+          {
+            "question": "Will Japan win on 2026-06-29?",
+            "outcomes": "[\"Yes\", \"No\"]",
+            "outcomePrices": "[\"0.185\", \"0.815\"]",
+            "lastTradePrice": 0.19,
+            "bestBid": 0.18,
+            "bestAsk": 0.19,
+            "clobTokenIds": "[\"62752037506734227724693430695336334041746689568397072632264782484262688795846\", \"13947647582525676347222741371597195922857551865907155864676257411288593802238\"]",
+            "volume": "3091415.907028024",
+            "liquidity": "2514592.8073"
+          }
+        ]
+      },
+      "advancement": {
+        "captured": true,
+        "event_slug": "world-cup-nation-to-reach-round-of-16",
+        "next_round": "Round of 16",
+        "raw_yes": {
+          "A": 0.735,
+          "B": 0.265
+        },
+        "booksum": 1.0,
+        "primary_method": "proportional",
+        "devigged": {
+          "proportional": {
+            "ADV_A": 0.735,
+            "ADV_B": 0.265
+          },
+          "odds_ratio": {
+            "ADV_A": 0.735,
+            "ADV_B": 0.26500000000000007
+          },
+          "shin": {
+            "ADV_A": 0.735,
+            "ADV_B": 0.265
+          }
+        },
+        "per_market": [
+          {
+            "question": "Will Brazil reach the Round of 16 at the 2026 FIFA World Cup?",
+            "outcomes": "[\"Yes\", \"No\"]",
+            "outcomePrices": "[\"0.735\", \"0.265\"]",
+            "lastTradePrice": 0.75,
+            "bestBid": 0.73,
+            "bestAsk": 0.74,
+            "clobTokenIds": "[\"60941235333934119537308581623022145063589498358463811604437431757990716193139\", \"69254358704504551873876012384649223770132435379419074198292590735170180021451\"]",
+            "volume": "138349.117095",
+            "liquidity": "29257.5463"
+          },
+          {
+            "question": "Will Japan reach the Round of 16 at the 2026 FIFA World Cup?",
+            "outcomes": "[\"Yes\", \"No\"]",
+            "outcomePrices": "[\"0.265\", \"0.735\"]",
+            "lastTradePrice": 0.27,
+            "bestBid": 0.26,
+            "bestAsk": 0.27,
+            "clobTokenIds": "[\"51498265855199325037807063944134604575875267265553692643082700263011137791165\", \"52296918342361060808995231474176139660494480374831792514044158206957491193338\"]",
+            "volume": "212703.22121699972",
+            "liquidity": "37643.333"
+          }
+        ]
+      }
+    }
+  }
+}
