@@ -1,0 +1,67 @@
+{
+  "match_id": "R32_77_FRA_SWE",
+  "captured_at": "2026-06-30T18:12:03.798533+00:00",
+  "kickoff": "2026-06-30T21:00:00+00:00",
+  "fields": {
+    "elo": {
+      "A": 2123,
+      "B": 1742,
+      "diff": 381,
+      "source": "eloratings.net (live pre-kickoff snapshot)",
+      "provenance": {
+        "source": "eloratings.net",
+        "capture_timestamp": "2026-06-30T18:12:03.798533+00:00",
+        "source_urls": {
+          "World.tsv": "https://www.eloratings.net/World.tsv",
+          "en.teams.tsv": "https://www.eloratings.net/en.teams.tsv"
+        },
+        "snapshot_dir": "data/packs/R32_77_FRA_SWE.elo",
+        "world_tsv_sha256": "6fdecdb45c9bc131176f562187e1ca936f9c387f7ba013b9a33a5015c2a81889",
+        "teams_tsv_sha256": "ff4b8c9c7bcdad56e81a007726c1a655c6dabdf77bca151b1d619f24125dbc90"
+      }
+    },
+    "fifa_rank": {
+      "A": 2,
+      "B": 37,
+      "type": "live in-tournament (pre-kickoff)",
+      "source_url": "https://inside.fifa.com/fifa-world-ranking/men",
+      "note": "verified on FIFA's own page in-window; France 2 (1906.84) / Sweden 37 (1525.58), live window (last official update 2026-06-11)"
+    },
+    "squad_value_eur_m": {
+      "A": 1520.0,
+      "B": 409.08,
+      "source_url_A": "https://www.transfermarkt.com/frankreich/startseite/verein/3377",
+      "source_url_B": "https://www.transfermarkt.com/schweden/startseite/verein/3557",
+      "note": "Transfermarkt national-team total market value, captured live in window"
+    },
+    "form_last10_wdl": {
+      "A": "8-1-1",
+      "B": "3-3-4",
+      "source": "data/reference/last10/last10_R32.json (author-verified; penalties=draw)",
+      "note": "10 most recent senior A-team internationals before 2026-06-30; leakage-checked"
+    },
+    "goals_for_against_last10": {
+      "A": "28/10",
+      "B": "18/21",
+      "source": "data/reference/last10/last10_R32.json (same verified table)"
+    },
+    "rest_days": {
+      "A": 4,
+      "B": 4,
+      "basis": "both last played 2026-06-26; match date 2026-06-30",
+      "source_url": "data/reference/last10/last10_R32.json"
+    },
+    "host_flag": {
+      "A": "no",
+      "B": "no",
+      "basis": "2026 hosts USA/CAN/MEX; neither team is a host"
+    },
+    "venue": {
+      "venue": "MetLife Stadium",
+      "city": "East Rutherford",
+      "source_url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+      "note": "Match 77; kickoff 2026-06-30T21:00Z (17:00 local EDT, UTC-4)"
+    }
+  },
+  "market_benchmark_manifest": "data/markets/R32_77_FRA_SWE.market.manifest.json"
+}

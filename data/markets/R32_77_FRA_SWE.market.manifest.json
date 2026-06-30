@@ -1,0 +1,151 @@
+{
+  "match_id": "R32_77_FRA_SWE",
+  "team_A": "France",
+  "team_B": "Sweden",
+  "capture_timestamp": "2026-06-30T18:12:03.798533+00:00",
+  "kickoff_timestamp": "2026-06-30T21:00:00+00:00",
+  "devig_method": "proportional",
+  "pinnacle": {
+    "captured": true,
+    "path": "data/markets/R32_77_FRA_SWE.pinnacle.raw.json",
+    "sha256": "e7b22acc69f335afcd99682338d7a7dc009c509080801ba2718588d237463525",
+    "bytes": 5898,
+    "captured_at": "2026-06-30T18:12:03.798533+00:00",
+    "raw_odds": {
+      "home": 1.29,
+      "draw": 6.1,
+      "away": 12.0
+    },
+    "devigged_AB": {
+      "A_WIN": 0.7581642482055744,
+      "DRAW": 0.1603330951123264,
+      "B_WIN": 0.08150265668209924
+    }
+  },
+  "polymarket": {
+    "captured": true,
+    "raw_search": {
+      "path": "data/markets/R32_77_FRA_SWE.polymarket.search.raw.json",
+      "sha256": "ac31bbb2499523618aa557028aef45bb315c1b0b6c1500ca796d41edd4cbaad4",
+      "bytes": 2592695,
+      "captured_at": "2026-06-30T18:12:03.798533+00:00"
+    },
+    "benchmark": {
+      "team_A": "France",
+      "team_B": "Sweden",
+      "three_way": {
+        "captured": true,
+        "event_slug": "fifwc-fra-swe-2026-06-30",
+        "raw_yes": {
+          "A_win": 0.765,
+          "draw": 0.155,
+          "B_win": 0.075
+        },
+        "booksum": 0.995,
+        "overround_pct": -0.5,
+        "primary_method": "proportional",
+        "devigged": {
+          "proportional": {
+            "A_WIN": 0.7688442211055276,
+            "DRAW": 0.15577889447236182,
+            "B_WIN": 0.07537688442211055
+          },
+          "odds_ratio": {
+            "A_WIN": 0.7673542329396504,
+            "DRAW": 0.1567289869361649,
+            "B_WIN": 0.07591678012418464
+          },
+          "shin": {
+            "A_WIN": 0.7688442211055276,
+            "DRAW": 0.15577889447236182,
+            "B_WIN": 0.07537688442211055
+          }
+        },
+        "per_market": [
+          {
+            "question": "Will France win on 2026-06-30?",
+            "outcomes": "[\"Yes\", \"No\"]",
+            "outcomePrices": "[\"0.765\", \"0.235\"]",
+            "lastTradePrice": 0.76,
+            "bestBid": 0.76,
+            "bestAsk": 0.77,
+            "clobTokenIds": "[\"91355094557016369228768123360298492968992168419338047915199416797057852525950\", \"110245164899602010210277970389621468243084512725901407479300635380209539722384\"]",
+            "volume": "3880984.8808120023",
+            "liquidity": "2669691.4942"
+          },
+          {
+            "question": "Will France vs. Sweden end in a draw?",
+            "outcomes": "[\"Yes\", \"No\"]",
+            "outcomePrices": "[\"0.155\", \"0.845\"]",
+            "lastTradePrice": 0.16,
+            "bestBid": 0.15,
+            "bestAsk": 0.16,
+            "clobTokenIds": "[\"19550592036274741049659200616233021499811235203601320680386451280519004661997\", \"57287073018160803437058197375172207457382043764533045816128708111733563434312\"]",
+            "volume": "237706.5834869997",
+            "liquidity": "1960843.5348"
+          },
+          {
+            "question": "Will Sweden win on 2026-06-30?",
+            "outcomes": "[\"Yes\", \"No\"]",
+            "outcomePrices": "[\"0.075\", \"0.925\"]",
+            "lastTradePrice": 0.07,
+            "bestBid": 0.07,
+            "bestAsk": 0.08,
+            "clobTokenIds": "[\"25101538316218147237997334564668091438563238337349407159868389076062854560259\", \"83468985758327085370913086888029178977869734441597174618422672348445966606178\"]",
+            "volume": "1115206.3351880074",
+            "liquidity": "3811041.7481"
+          }
+        ]
+      },
+      "advancement": {
+        "captured": true,
+        "event_slug": "world-cup-nation-to-reach-round-of-16",
+        "next_round": "Round of 16",
+        "raw_yes": {
+          "A": 0.88,
+          "B": 0.115
+        },
+        "booksum": 0.995,
+        "primary_method": "proportional",
+        "devigged": {
+          "proportional": {
+            "ADV_A": 0.8844221105527639,
+            "ADV_B": 0.11557788944723618
+          },
+          "odds_ratio": {
+            "ADV_A": 0.8825230580191981,
+            "ADV_B": 0.11747694198080191
+          },
+          "shin": {
+            "ADV_A": 0.8844221105527639,
+            "ADV_B": 0.11557788944723618
+          }
+        },
+        "per_market": [
+          {
+            "question": "Will France reach the Round of 16 at the 2026 FIFA World Cup?",
+            "outcomes": "[\"Yes\", \"No\"]",
+            "outcomePrices": "[\"0.88\", \"0.12\"]",
+            "lastTradePrice": 0.88,
+            "bestBid": 0.87,
+            "bestAsk": 0.89,
+            "clobTokenIds": "[\"115368824041546751413208264682108805732950453071323084321903097842886848094071\", \"110411391414242711592271025050399389970276725666676844607433760633035401775559\"]",
+            "volume": "491850.0567439994",
+            "liquidity": "52511.7145"
+          },
+          {
+            "question": "Will Sweden reach the Round of 16 at the 2026 FIFA World Cup?",
+            "outcomes": "[\"Yes\", \"No\"]",
+            "outcomePrices": "[\"0.115\", \"0.885\"]",
+            "lastTradePrice": 0.12,
+            "bestBid": 0.11,
+            "bestAsk": 0.12,
+            "clobTokenIds": "[\"39673567203573854664594776876390437822770022629765180420281140731743808818279\", \"90053887436945824568303686118229796378082254988675075723034245778641218651648\"]",
+            "volume": "31342.29672299998",
+            "liquidity": "40989.9818"
+          }
+        ]
+      }
+    }
+  }
+}

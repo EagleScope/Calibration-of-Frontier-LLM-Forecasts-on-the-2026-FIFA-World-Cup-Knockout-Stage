@@ -1,0 +1,39 @@
+{
+  "match_id": "R32_77_FRA_SWE",
+  "fields": {
+    "round": "Round of 32",
+    "date": "2026-06-30",
+    "venue": "MetLife Stadium",
+    "venue_city": "East Rutherford",
+    "team_A": "France",
+    "team_B": "Sweden",
+    "eloA": 2123,
+    "eloB": 1742,
+    "elo_diff": 381,
+    "rankA": 2,
+    "rankB": 37,
+    "mvA": 1520.0,
+    "mvB": 409.08,
+    "formA": "8-1-1",
+    "formB": "3-3-4",
+    "gfgaA": "28/10",
+    "gfgaB": "18/21",
+    "hostA": "no",
+    "hostB": "no",
+    "restA": 4,
+    "restB": 4
+  },
+  "pack_text": "MATCH: Round of 32, 2026-06-30, MetLife Stadium, East Rutherford\nTEAM A: France\nTEAM B: Sweden\n\n                              TEAM A        TEAM B\nWorld Football Elo:           2123        1742\nElo difference (A - B):       381\nFIFA ranking:                 2       37\nSquad market value (EUR m):   1520.0         409.08\nRecent form (last 10, W-D-L): 8-1-1       3-3-4\nGoals for / against (last 10):28/10       18/21\nHost nation playing at home:  no       no\nRest days since last match:   4       4",
+  "freeze_timestamp": "2026-06-30T18:12:03.798533+00:00",
+  "content_sha256": "da551ef77ab6471a30704aef56c43ab714399e461aea67205acb52f4f7b0024c",
+  "sources": {
+    "elo": "eloratings.net",
+    "fifa_rank": "FIFA",
+    "squad_value_eur_m": "Transfermarkt",
+    "recent_form_wdl": "match-results database (TBD)",
+    "goals_for_against": "match-results database (TBD)",
+    "rest_days": "official schedule",
+    "host_flag": "official schedule (USA/CAN/MEX co-hosts)"
+  },
+  "protocol_version": "1.0"
+}
