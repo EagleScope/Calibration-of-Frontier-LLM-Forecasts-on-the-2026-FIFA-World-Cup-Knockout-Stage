@@ -28,7 +28,7 @@ NAME_ALIASES: Dict[str, str] = {
     "United States of America": "United States",
     "South Korea": "Korea Republic",
     "North Korea": "Korea DPR",
-    "Ivory Coast": "Côte d'Ivoire",
+    "Côte d'Ivoire": "Ivory Coast",
 }
 
 
