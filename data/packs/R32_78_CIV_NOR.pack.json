@@ -1,0 +1,39 @@
+{
+  "match_id": "R32_78_CIV_NOR",
+  "fields": {
+    "round": "Round of 32",
+    "date": "2026-06-30",
+    "venue": "AT&T Stadium",
+    "venue_city": "Arlington",
+    "team_A": "Ivory Coast",
+    "team_B": "Norway",
+    "eloA": 1743,
+    "eloB": 1918,
+    "elo_diff": -175,
+    "rankA": 31,
+    "rankB": 23,
+    "mvA": 522.1,
+    "mvB": 589.9,
+    "formA": "7-1-2",
+    "formB": "8-1-1",
+    "gfgaA": "20/9",
+    "gfgaB": "37/12",
+    "hostA": "no",
+    "hostB": "no",
+    "restA": 5,
+    "restB": 4
+  },
+  "pack_text": "MATCH: Round of 32, 2026-06-30, AT&T Stadium, Arlington\nTEAM A: Ivory Coast\nTEAM B: Norway\n\n                              TEAM A        TEAM B\nWorld Football Elo:           1743        1918\nElo difference (A - B):       -175\nFIFA ranking:                 31       23\nSquad market value (EUR m):   522.1         589.9\nRecent form (last 10, W-D-L): 7-1-2       8-1-1\nGoals for / against (last 10):20/9       37/12\nHost nation playing at home:  no       no\nRest days since last match:   5       4",
+  "freeze_timestamp": "2026-06-30T16:19:21.572218+00:00",
+  "content_sha256": "cbb83ca312423cf8e32bc9bae88078320782693a39e835f3a423bed28557ae49",
+  "sources": {
+    "elo": "eloratings.net",
+    "fifa_rank": "FIFA",
+    "squad_value_eur_m": "Transfermarkt",
+    "recent_form_wdl": "match-results database (TBD)",
+    "goals_for_against": "match-results database (TBD)",
+    "rest_days": "official schedule",
+    "host_flag": "official schedule (USA/CAN/MEX co-hosts)"
+  },
+  "protocol_version": "1.0"
+}

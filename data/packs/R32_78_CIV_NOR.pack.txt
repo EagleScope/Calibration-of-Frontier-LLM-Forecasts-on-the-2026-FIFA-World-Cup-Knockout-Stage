@@ -1,0 +1,13 @@
+MATCH: Round of 32, 2026-06-30, AT&T Stadium, Arlington
+TEAM A: Ivory Coast
+TEAM B: Norway
+
+                              TEAM A        TEAM B
+World Football Elo:           1743        1918
+Elo difference (A - B):       -175
+FIFA ranking:                 31       23
+Squad market value (EUR m):   522.1         589.9
+Recent form (last 10, W-D-L): 7-1-2       8-1-1
+Goals for / against (last 10):20/9       37/12
+Host nation playing at home:  no       no
+Rest days since last match:   5       4

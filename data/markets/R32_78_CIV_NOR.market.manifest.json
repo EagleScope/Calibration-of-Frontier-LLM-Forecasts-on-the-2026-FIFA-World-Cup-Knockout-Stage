@@ -1,0 +1,93 @@
+{
+  "match_id": "R32_78_CIV_NOR",
+  "team_A": "Ivory Coast",
+  "team_B": "Norway",
+  "capture_timestamp": "2026-06-30T16:19:21.572218+00:00",
+  "kickoff_timestamp": "2026-06-30T17:00:00+00:00",
+  "devig_method": "proportional",
+  "pinnacle": {
+    "captured": true,
+    "path": "data/markets/R32_78_CIV_NOR.pinnacle.raw.json",
+    "sha256": "c06a9c49886c03c7e655a6229e32400626b2733fdc5741729b266685cd60bd8b",
+    "bytes": 5898,
+    "captured_at": "2026-06-30T16:19:21.572218+00:00",
+    "raw_odds": {
+      "home": 3.59,
+      "draw": 3.42,
+      "away": 2.22
+    },
+    "devigged_AB": {
+      "A_WIN": 0.2727155172413793,
+      "DRAW": 0.28627155172413793,
+      "B_WIN": 0.44101293103448275
+    }
+  },
+  "polymarket": {
+    "captured": true,
+    "raw_search": {
+      "path": "data/markets/R32_78_CIV_NOR.polymarket.search.raw.json",
+      "sha256": "8ffa8c5be527bd89c39bd447f3d7b51d2562c826a6f44a6a87511728e2f8fd0f",
+      "bytes": 2453025,
+      "captured_at": "2026-06-30T16:19:21.572218+00:00"
+    },
+    "benchmark": {
+      "team_A": "Ivory Coast",
+      "team_B": "Norway",
+      "three_way": {
+        "captured": false,
+        "reason": "no per-match 3-way event in search",
+        "documented_absence": "Exploratory Polymarket per-match 3-way not found in search for this fixture. Registered benchmarks ARE captured: Pinnacle 3-way + Polymarket advancement (reach R16). Conditioning arm uses Pinnacle; registered scoring unaffected."
+      },
+      "advancement": {
+        "captured": true,
+        "event_slug": "world-cup-nation-to-reach-round-of-16",
+        "next_round": "Round of 16",
+        "raw_yes": {
+          "A": 0.36,
+          "B": 0.655
+        },
+        "booksum": 1.015,
+        "primary_method": "proportional",
+        "devigged": {
+          "proportional": {
+            "ADV_A": 0.354679802955665,
+            "ADV_B": 0.645320197044335
+          },
+          "odds_ratio": {
+            "ADV_A": 0.352463639243997,
+            "ADV_B": 0.647536360756003
+          },
+          "shin": {
+            "ADV_A": 0.3524999999999999,
+            "ADV_B": 0.6475000000000001
+          }
+        },
+        "per_market": [
+          {
+            "question": "Will Ivory Coast reach the Round of 16 at the 2026 FIFA World Cup?",
+            "outcomes": "[\"Yes\", \"No\"]",
+            "outcomePrices": "[\"0.36\", \"0.64\"]",
+            "lastTradePrice": 0.37,
+            "bestBid": 0.35,
+            "bestAsk": 0.37,
+            "clobTokenIds": "[\"13819637901082582892125616853179047157666702217106423850710066338432251868380\", \"85111631818823833957596143704517407582374802989008069974502301596482235640152\"]",
+            "volume": "37469.32083000005",
+            "liquidity": "32697.4755"
+          },
+          {
+            "question": "Will Norway reach the Round of 16 at the 2026 FIFA World Cup?",
+            "outcomes": "[\"Yes\", \"No\"]",
+            "outcomePrices": "[\"0.655\", \"0.345\"]",
+            "lastTradePrice": 0.66,
+            "bestBid": 0.65,
+            "bestAsk": 0.66,
+            "clobTokenIds": "[\"95566813061427836569861865558956459073158162829326533020907861053436228383602\", \"59240649369809426863319894472914563319083762137200168678635159441927390667821\"]",
+            "volume": "96914.71197799979",
+            "liquidity": "42729.7448"
+          }
+        ]
+      }
+    }
+  },
+  "capture_offset_note": "Captured 2026-06-30T16:19:21Z = ~41 min before the 17:00Z kickoff. Pre-kickoff and leakage-free; tightest pre-kickoff offset of the R32 matches (an Ivory Coast Elo-alias fix detour consumed the window). Model and market share this one 16:19Z information set."
+}

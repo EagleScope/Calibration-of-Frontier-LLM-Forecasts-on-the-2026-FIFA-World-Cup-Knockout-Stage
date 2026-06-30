@@ -1,0 +1,67 @@
+{
+  "match_id": "R32_78_CIV_NOR",
+  "captured_at": "2026-06-30T16:19:21.572218+00:00",
+  "kickoff": "2026-06-30T17:00:00+00:00",
+  "fields": {
+    "elo": {
+      "A": 1743,
+      "B": 1918,
+      "diff": -175,
+      "source": "eloratings.net (live pre-kickoff snapshot)",
+      "provenance": {
+        "source": "eloratings.net",
+        "capture_timestamp": "2026-06-30T16:19:21.572218+00:00",
+        "source_urls": {
+          "World.tsv": "https://www.eloratings.net/World.tsv",
+          "en.teams.tsv": "https://www.eloratings.net/en.teams.tsv"
+        },
+        "snapshot_dir": "data/packs/R32_78_CIV_NOR.elo",
+        "world_tsv_sha256": "6fdecdb45c9bc131176f562187e1ca936f9c387f7ba013b9a33a5015c2a81889",
+        "teams_tsv_sha256": "ff4b8c9c7bcdad56e81a007726c1a655c6dabdf77bca151b1d619f24125dbc90"
+      }
+    },
+    "fifa_rank": {
+      "A": 31,
+      "B": 23,
+      "type": "live in-tournament (pre-kickoff)",
+      "source_url": "https://inside.fifa.com/fifa-world-ranking/men",
+      "note": "verified on FIFA's own page; Ivory Coast 31 (1565.47) / Norway 23 (1594.04), live window (last official update 2026-06-11)"
+    },
+    "squad_value_eur_m": {
+      "A": 522.1,
+      "B": 589.9,
+      "source_url_A": "https://www.transfermarkt.com/elfenbeinkuste/startseite/verein/3591",
+      "source_url_B": "https://www.transfermarkt.com/norwegen/startseite/verein/3440",
+      "note": "Transfermarkt national-team total market value, captured live in window"
+    },
+    "form_last10_wdl": {
+      "A": "7-1-2",
+      "B": "8-1-1",
+      "source": "data/reference/last10/last10_R32.json (author-verified; penalties=draw)",
+      "note": "10 most recent senior A-team internationals before 2026-06-30; leakage-checked"
+    },
+    "goals_for_against_last10": {
+      "A": "20/9",
+      "B": "37/12",
+      "source": "data/reference/last10/last10_R32.json (same verified table)"
+    },
+    "rest_days": {
+      "A": 5,
+      "B": 4,
+      "basis": "CIV last 2026-06-25, NOR last 2026-06-26; match date 2026-06-30",
+      "source_url": "data/reference/last10/last10_R32.json"
+    },
+    "host_flag": {
+      "A": "no",
+      "B": "no",
+      "basis": "2026 hosts USA/CAN/MEX; neither team is a host"
+    },
+    "venue": {
+      "venue": "AT&T Stadium",
+      "city": "Arlington",
+      "source_url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage",
+      "note": "Match 78; kickoff 2026-06-30T17:00Z (12:00 local CDT, UTC-5)"
+    }
+  },
+  "market_benchmark_manifest": "data/markets/R32_78_CIV_NOR.market.manifest.json"
+}
