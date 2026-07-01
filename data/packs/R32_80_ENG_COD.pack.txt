@@ -1,0 +1,13 @@
+MATCH: Round of 32, 2026-07-01, Mercedes-Benz Stadium, Atlanta
+TEAM A: England
+TEAM B: DR Congo
+
+                              TEAM A        TEAM B
+World Football Elo:           2038        1712
+Elo difference (A - B):       326
+FIFA ranking:                 4       46
+Squad market value (EUR m):   1360.0         143.9
+Recent form (last 10, W-D-L): 7-2-1       4-3-3
+Goals for / against (last 10):20/4       12/7
+Host nation playing at home:  no       no
+Rest days since last match:   4       4

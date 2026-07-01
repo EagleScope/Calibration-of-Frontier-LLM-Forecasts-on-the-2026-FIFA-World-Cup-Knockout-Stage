@@ -1,0 +1,39 @@
+{
+  "match_id": "R32_80_ENG_COD",
+  "fields": {
+    "round": "Round of 32",
+    "date": "2026-07-01",
+    "venue": "Mercedes-Benz Stadium",
+    "venue_city": "Atlanta",
+    "team_A": "England",
+    "team_B": "DR Congo",
+    "eloA": 2038,
+    "eloB": 1712,
+    "elo_diff": 326,
+    "rankA": 4,
+    "rankB": 46,
+    "mvA": 1360.0,
+    "mvB": 143.9,
+    "formA": "7-2-1",
+    "formB": "4-3-3",
+    "gfgaA": "20/4",
+    "gfgaB": "12/7",
+    "hostA": "no",
+    "hostB": "no",
+    "restA": 4,
+    "restB": 4
+  },
+  "pack_text": "MATCH: Round of 32, 2026-07-01, Mercedes-Benz Stadium, Atlanta\nTEAM A: England\nTEAM B: DR Congo\n\n                              TEAM A        TEAM B\nWorld Football Elo:           2038        1712\nElo difference (A - B):       326\nFIFA ranking:                 4       46\nSquad market value (EUR m):   1360.0         143.9\nRecent form (last 10, W-D-L): 7-2-1       4-3-3\nGoals for / against (last 10):20/4       12/7\nHost nation playing at home:  no       no\nRest days since last match:   4       4",
+  "freeze_timestamp": "2026-07-01T13:02:29.783575+00:00",
+  "content_sha256": "16844cfad518cbd9371b9e8b867fc6ae3cbe88aee2a3302bf7fddfeadc488ab1",
+  "sources": {
+    "elo": "eloratings.net",
+    "fifa_rank": "FIFA",
+    "squad_value_eur_m": "Transfermarkt",
+    "recent_form_wdl": "match-results database (TBD)",
+    "goals_for_against": "match-results database (TBD)",
+    "rest_days": "official schedule",
+    "host_flag": "official schedule (USA/CAN/MEX co-hosts)"
+  },
+  "protocol_version": "1.0"
+}
